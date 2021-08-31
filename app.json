@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "rn-lab",
+    "slug": "rn-lab",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "rn-lab"
+}
