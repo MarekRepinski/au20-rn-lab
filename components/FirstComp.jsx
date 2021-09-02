@@ -14,6 +14,7 @@ const FirstComp = ({nextScreen}) => {
                 And one is a call for an API.
             </Text>
             <Button
+                color='aqua'
                 title='Back' 
                 onPress={nextScreen} />
             <Image style={ {resizeMode: 'contain', width: '100%', height: '100%'} } source={require('../images/gdansk.jpg')} />
