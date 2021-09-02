@@ -1,3 +1,9 @@
+/**************************************************************************************/
+/*                                   Menu.jsx                                         */
+/*                                                                                    */
+/*  Simple component. Shows text in ScrollView and some Images.                       */
+/*                                                                                    */
+/**************************************************************************************/
 import React from 'react';
 import { StyleSheet, Image, ScrollView, Text, Button } from 'react-native';
 

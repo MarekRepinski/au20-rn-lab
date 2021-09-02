@@ -1,3 +1,9 @@
+/**************************************************************************************/
+/*                                MyContext.js                                        */
+/*                                                                                    */
+/*  Creates a Context that works like a counter and a Provider.                       */
+/*                                                                                    */
+/**************************************************************************************/
 import React, { createContext, useState } from "react";
 
 const MyContext = createContext({

@@ -1,3 +1,9 @@
+/**************************************************************************************/
+/*                                   Menu.jsx                                         */
+/*                                                                                    */
+/*  Main component. Shows a menu in listform. Redirects to other components.          */
+/*                                                                                    */
+/**************************************************************************************/
 import { useState, useEffect } from 'react';
 import { Text, View, StyleSheet, Pressable, TextInput } from 'react-native';
 import React from 'react';
@@ -8,10 +14,12 @@ import CntComp from './CntComp';
 import DrinkNeed from './DrinkNeed';
 
 const Menu = () => {
+    // Constants user for navigation via switch
     const WELCOME = 'welcome', FIRST = 'first', MENU = 'menu', PROPS = 'props', CNT = 'cnt', DRINK = 'drink';
     const [currentscreen, setCurrentScreen] = useState(WELCOME);
     const [propsString, setPropsString] = useState('');
 
+    // Reset setPropsString after use
     useEffect(() => {
         if (currentscreen === MENU){
             setPropsString('');

@@ -1,3 +1,9 @@
+/**************************************************************************************/
+/*                                PropsComp.jsx                                       */
+/*                                                                                    */
+/*  A component that takes Props as parameter and sets a State.                       */
+/*                                                                                    */
+/**************************************************************************************/
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 

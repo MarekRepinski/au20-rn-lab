@@ -1,3 +1,10 @@
+/**************************************************************************************/
+/*                                 CntComp.jsx                                        */
+/*                                                                                    */
+/*  Component that count how many time it is vivsited and stors it in Contex from     */
+/*  MyContext.js                                                                      */
+/*                                                                                    */
+/**************************************************************************************/
 import MyContext from '../context/MyContext';
 import React, { useContext, useEffect } from "react";
 import { StyleSheet, Text, View, Button } from 'react-native';

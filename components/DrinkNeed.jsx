@@ -1,5 +1,11 @@
+/**************************************************************************************/
+/*                                DrinkNeed.jsx                                       */
+/*                                                                                    */
+/*  Component that fetches data from a Cocktail API and presnets the data.            */
+/*                                                                                    */
+/**************************************************************************************/
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, Text, View, ScrollView, Image, Button } from 'react-native';
+import { StyleSheet, Text, ScrollView, Image, Button } from 'react-native';
 
 const DrinkNeed = ({ nextScreen }) => {
     const url = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
@@ -11,6 +17,7 @@ const DrinkNeed = ({ nextScreen }) => {
     const [ing5, setIng5] = useState(' ');
 
     useEffect(() => {
+        // Fetch data from API
         fetch(url)
             .then((resp) => resp.json())
             .then((json) => {
@@ -43,11 +50,12 @@ const DrinkNeed = ({ nextScreen }) => {
         </ScrollView>
     );
 
+    // Set all states for ingredients and check for null
     function setIng(json) {
         setIng1(json.strMeasure1 + ' ' + json.strIngredient1);
 
-        if (json.strIngredient2 != 'null') {
-            if (json.strMeasure2 != 'null') {
+        if (json.strIngredient2 != null) {
+            if (json.strMeasure2 != null) {
                 setIng2(json.strMeasure2 + ' ' + json.strIngredient2);
             } else {
                 setIng2(json.strIngredient2);
@@ -56,8 +64,8 @@ const DrinkNeed = ({ nextScreen }) => {
             setIng2(' ');
         }
 
-        if (json.strIngredient3 != 'null') {
-            if (json.strMeasure3 != 'null') {
+        if (json.strIngredient3 != null) {
+            if (json.strMeasure3 != null) {
                 setIng3(json.strMeasure3 + ' ' + json.strIngredient3);
             } else {
                 setIng3(json.strIngredient3);
@@ -66,8 +74,8 @@ const DrinkNeed = ({ nextScreen }) => {
             setIng3(' ');
         }
 
-        if (json.strIngredient4 != 'null') {
-            if (json.strMeasure4 != 'null') {
+        if (json.strIngredient4 != null) {
+            if (json.strMeasure4 != null) {
                 setIng4(json.strMeasure4 + ' ' + json.strIngredient4);
             } else {
                 setIng4(json.strIngredient4);
@@ -76,8 +84,8 @@ const DrinkNeed = ({ nextScreen }) => {
             setIng4(' ');
         }
 
-        if (json.strIngredient5 != 'null') {
-            if (json.strMeasure5 != 'null') {
+        if (json.strIngredient5 !== null) {
+            if (json.strMeasure5 !== null) {
                 setIng5(json.strMeasure5 + ' ' + json.strIngredient5);
             } else {
                 setIng5(json.strIngredient5);
