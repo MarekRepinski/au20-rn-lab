@@ -68,6 +68,7 @@ const Menu = () => {
 
 const styles = StyleSheet.create({
     menu: {
+        width: '80%',
         flex: 1,
         backgroundColor: '#fff',
         alignItems: 'center',
