@@ -5,11 +5,10 @@ import Welcome from './Welcome'
 import FirstComp from './FirstComp';
 import PropsComp from './PropsComp';
 import CntComp from './CntComp';
-import Test from './Test';
-import MyContext from '../context/MyContext';
+import DrinkNeed from './DrinkNeed';
 
 const Menu = () => {
-    const WELCOME = 'welcome', FIRST = 'first', MENU = 'menu', PROPS = 'props', CNT = 'cnt';
+    const WELCOME = 'welcome', FIRST = 'first', MENU = 'menu', PROPS = 'props', CNT = 'cnt', DRINK = 'drink';
     const [currentscreen, setCurrentScreen] = useState(WELCOME);
     const [propsString, setPropsString] = useState('');
 
@@ -25,8 +24,10 @@ const Menu = () => {
             content = <PropsComp text={propsString} nextScreen={() => setCurrentScreen(MENU)} />;
             break;
         case CNT:
-            content = <Test nextScreen={() => setCurrentScreen(MENU)} />;
             content = <CntComp nextScreen={() => setCurrentScreen(MENU)} />;
+            break;
+        case DRINK:
+            content = <DrinkNeed nextScreen={() => setCurrentScreen(MENU)} />;
             break;
         default:
             content = menuItems();
@@ -39,15 +40,19 @@ const Menu = () => {
     function menuItems() {
         return (
             <React.Fragment>
+                <Text style={styles.header}>Menu</Text>
                 <Pressable key={0} style={styles.button} onTouchEnd={() => setCurrentScreen(FIRST)}>
                     <Text>Info about the Lab</Text>
                 </Pressable>
-                <TextInput key={1} style={styles.input} onChangeText={(text) => setPropsString(text)} placeholder="add a props" />
                 <Pressable key={2} style={styles.button} onTouchEnd={() => setCurrentScreen(PROPS)}>
                     <Text>Click for Props</Text>
                 </Pressable>
+                <TextInput key={1} style={styles.input} onChangeText={(text) => setPropsString(text)} placeholder="add a props" />
                 <Pressable key={3} style={styles.button} onTouchEnd={() => setCurrentScreen(CNT)}>
                     <Text>Counter via Context</Text>
+                </Pressable>
+                <Pressable key={4} style={styles.button} onTouchEnd={() => setCurrentScreen(DRINK)}>
+                    <Text>I need a drink</Text>
                 </Pressable>
             </React.Fragment>
         );
@@ -60,10 +65,20 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
     },
     button: {
+        width: '90%',
+        marginTop: 40,
+        padding: 5,
         backgroundColor: 'aqua',
+        fontWeight: 'bold',
+    },
+    header: {
+        marginTop: 80,
+        padding: 5,
+        backgroundColor: '#fff',
+        fontWeight: 'bold',
     },
     input: {
         height: 40,
